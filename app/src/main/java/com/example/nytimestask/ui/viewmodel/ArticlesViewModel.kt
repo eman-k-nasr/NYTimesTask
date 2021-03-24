@@ -1,4 +1,4 @@
-package com.example.nytimestask.data.ui.viewmodel
+package com.example.nytimestask.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

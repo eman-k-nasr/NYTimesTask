@@ -3,7 +3,7 @@ package com.example.nytimestask.utils
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.nytimestask.data.remote.ApiHelper
-import com.example.nytimestask.data.ui.viewmodel.ArticlesViewModel
+import com.example.nytimestask.ui.viewmodel.ArticlesViewModel
 
 class ArticlesViewModelFactory(private val apiHelper:ApiHelper):ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

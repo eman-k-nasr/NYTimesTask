@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.nytimestask.data.remote.ApiHelperImpl
 import com.example.nytimestask.data.remote.RetrofitClient
-import com.example.nytimestask.data.ui.viewmodel.ArticlesViewModel
+import com.example.nytimestask.ui.viewmodel.ArticlesViewModel
 import com.example.nytimestask.utils.ArticlesViewModelFactory
 import com.example.nytimestask.utils.Status
 

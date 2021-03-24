@@ -1,4 +1,4 @@
-package com.example.nytimestask.data.ui.view
+package com.example.nytimestask.ui.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
