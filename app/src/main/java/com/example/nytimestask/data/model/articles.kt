@@ -12,35 +12,35 @@ data class ArticlesResult(
 )
 
 data class Article(
-    val uri: String,
-    val url: String,
-    val id: Long,
+    val uri: String = "",
+    val url: String = "",
+    val id: Long = 0,
     @SerializedName("asset_id")
-    val assetID: Long,
-    val source: String,
+    val assetID: Long = 0,
+    val source: String = "",
     @SerializedName("published_date")
-    val publishedDate: String,
-    val updated: String,
-    val section: String,
-    val subsection: String,
-    val nytdsection: String,
+    val publishedDate: String = "",
+    val updated: String = "",
+    val section: String = "",
+    val subsection: String = "",
+    val nytdsection: String = "",
     @SerializedName("adx_keywords")
-    val adxKeywords: String,
-    val byline: String,
-    val type: String,
-    val title: String,
-    val abstract: String,
+    val adxKeywords: String = "",
+    val byline: String = "",
+    val type: String = "",
+    val title: String = "",
+    val abstract: String = "",
     @SerializedName("des_facet")
-    val desFacet: List<String>,
+    val desFacet: List<String> = emptyList(),
     @SerializedName("org_facet")
-    val orgFacet: List<String>,
+    val orgFacet: List<String> = emptyList(),
     @SerializedName("per_facet")
-    val perFacet: List<String>,
+    val perFacet: List<String> = emptyList(),
     @SerializedName("geo_facet")
-    val geoFacet: List<String>,
-    val media: List<Media>,
+    val geoFacet: List<String> = emptyList(),
+    val media: List<Media> = emptyList(),
     @SerializedName("eta_id")
-    val etaID: Long
+    val etaID: Long = 0
 )
 
 data class Media(
