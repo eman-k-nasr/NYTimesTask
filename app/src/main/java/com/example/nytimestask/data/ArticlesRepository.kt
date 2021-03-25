@@ -8,13 +8,6 @@ import com.example.nytimestask.utils.Resource
 class ArticlesRepository(private val apiHelper: ApiHelper,
                          private val dbHepler: DBHelper) {
 
-     suspend fun fetchArticles():Resource<List<Article>>{
-        try{
-            val articlesFromApi = apiHelper.getArticlesResult().results
-            return Resource.success(articlesFromApi)
-        }catch(ex: Exception){
-            return Resource.error(ex.toString(),null)
-        }
-    }
+     suspend fun fetchArticles():Resource<List<Article>> = apiHelper.getArticles()
 
 }
