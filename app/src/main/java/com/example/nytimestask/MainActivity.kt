@@ -5,6 +5,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.nytimestask.data.ArticlesRepository
+import com.example.nytimestask.data.local.DBHelperImp
 import com.example.nytimestask.data.remote.ApiHelperImpl
 import com.example.nytimestask.data.remote.RetrofitClient
 import com.example.nytimestask.ui.viewmodel.ArticlesViewModel
@@ -22,7 +24,10 @@ class MainActivity : AppCompatActivity() {
         articlesViewModel = ViewModelProviders.of(
             this,
              ArticlesViewModelFactory(
-                 ApiHelperImpl(RetrofitClient.apiService)
+                     ArticlesRepository(
+                             ApiHelperImpl(RetrofitClient.apiService),
+                             DBHelperImp()
+                     )
              )
         ).get(ArticlesViewModel::class.java)
 
