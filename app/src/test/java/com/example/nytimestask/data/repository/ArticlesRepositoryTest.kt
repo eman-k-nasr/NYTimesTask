@@ -1,5 +1,7 @@
-package com.example.nytimestask.data
+package com.example.nytimestask.data.repository
 
+import com.example.nytimestask.data.FakeApi
+import com.example.nytimestask.data.FakeDB
 import com.example.nytimestask.data.local.DBHelper
 import com.example.nytimestask.data.model.Article
 import com.example.nytimestask.data.remote.ApiHelper
@@ -11,7 +13,7 @@ import org.junit.Before
 import org.junit.Test
 
 class ArticlesRepositoryTest{
-    private lateinit var repo:ArticlesRepository
+    private lateinit var repo: ArticlesRepository
     private lateinit var fakeLocalDataSource: DBHelper
     private lateinit var fakeRemoteDataSource: ApiHelper
     private lateinit var articlesFromApi : List<Article>
