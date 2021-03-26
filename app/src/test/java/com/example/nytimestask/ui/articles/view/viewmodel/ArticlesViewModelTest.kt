@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.nytimestask.data.model.Article
 import com.example.nytimestask.data.repository.FakeRepository
+import com.example.nytimestask.ui.articles.viewmodel.ArticlesViewModel
 import com.example.nytimestask.utils.Resource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
