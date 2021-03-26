@@ -5,4 +5,7 @@
     <string name="date">published-date: </string>
     <string name="source" >source: </string>
     <string name="by">written by: </string>
+    <string name="section">section: </string>
+    <string name="type">type:</string>
+    <string name="keywords">keywords: </string>
 </resources>

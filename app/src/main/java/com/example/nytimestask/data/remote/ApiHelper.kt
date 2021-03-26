@@ -5,4 +5,5 @@ import com.example.nytimestask.utils.Resource
 
 interface ApiHelper {
     suspend fun getArticles(): Resource<List<Article>>
+    suspend fun fetchArticle(articleId: Long): Resource<Article>
 }

@@ -1,10 +1,8 @@
 package com.example.nytimestask.ui.articles.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.nytimestask.data.model.Article
+import com.example.nytimestask.data.repository.ArticlesRepository
 import com.example.nytimestask.data.repository.IArticlesRepository
 import com.example.nytimestask.utils.Resource
 import kotlinx.coroutines.launch
@@ -26,5 +24,15 @@ class ArticlesViewModel(private val repo: IArticlesRepository):ViewModel(){
 
     fun getArticles(): LiveData<Resource<List<Article>>> {
         return articles
+    }
+}
+
+@Suppress("UNCHECKED_CAST")
+class ArticlesViewModelFactory(private val repo: ArticlesRepository): ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if(modelClass.isAssignableFrom(ArticlesViewModel::class.java)){
+            return ArticlesViewModel(repo) as T
+        }
+        throw IllegalArgumentException("Unknown class name")
     }
 }

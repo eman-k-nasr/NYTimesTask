@@ -12,4 +12,14 @@ class ApiHelperImpl(private val apiService: ApiService) : ApiHelper {
             return Resource.error(ex.toString(),null)
         }
     }
+
+    override suspend fun fetchArticle(articleId: Long): Resource<Article> {
+        try{
+            val articlesFromApi= apiService.getArticlesResult().results
+            val articleDetailsFromApi = articlesFromApi.find { article -> article.id == articleId }
+            return Resource.success(articleDetailsFromApi)
+        }catch(ex: Exception){
+            return Resource.error(ex.toString(),null)
+        }
+    }
 }

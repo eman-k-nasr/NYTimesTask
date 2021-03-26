@@ -21,7 +21,7 @@ import com.example.nytimestask.data.remote.RetrofitClient
 import com.example.nytimestask.data.repository.ArticlesRepository
 import com.example.nytimestask.ui.articles.adapter.ArticlesAdapter
 import com.example.nytimestask.ui.articles.viewmodel.ArticlesViewModel
-import com.example.nytimestask.utils.ArticlesViewModelFactory
+import com.example.nytimestask.ui.articles.viewmodel.ArticlesViewModelFactory
 import com.example.nytimestask.utils.Status
 import kotlinx.android.synthetic.main.fragment_articles.*
 

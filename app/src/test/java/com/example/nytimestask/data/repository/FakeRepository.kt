@@ -12,4 +12,13 @@ class FakeRepository(val articles : List<Article>?):IArticlesRepository {
             return Resource.error(ERROR_MSG,null)
         }
     }
+
+    override suspend fun fetchArticle(articleId: Long): Resource<Article> {
+        val article = articles?.find { article -> article.id == articleId  }
+        if(article!=null){
+            return Resource.success(article)
+        }else{
+            return Resource.error(ERROR_MSG,null)
+        }
+    }
 }
