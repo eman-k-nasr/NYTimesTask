@@ -1,10 +1,9 @@
-package com.example.nytimestask.ui.viewmodel
+package com.example.nytimestask.ui.articles.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.nytimestask.data.repository.ArticlesRepository
 import com.example.nytimestask.data.model.Article
 import com.example.nytimestask.data.repository.IArticlesRepository
 import com.example.nytimestask.utils.Resource

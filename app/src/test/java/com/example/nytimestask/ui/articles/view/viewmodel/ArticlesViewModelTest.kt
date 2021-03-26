@@ -1,4 +1,4 @@
-package com.example.nytimestask.ui.viewmodel
+package com.example.nytimestask.ui.articles.view.viewmodel
 
 import android.os.Build
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
