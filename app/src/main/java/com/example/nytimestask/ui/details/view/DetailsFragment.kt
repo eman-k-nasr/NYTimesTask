@@ -11,17 +11,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
+import com.example.nytimestask.ArticlesApplication
 import com.example.nytimestask.R
-import com.example.nytimestask.data.local.DBHelperImp
 import com.example.nytimestask.data.model.Article
-import com.example.nytimestask.data.remote.ApiHelperImpl
-import com.example.nytimestask.data.remote.RetrofitClient
-import com.example.nytimestask.data.repository.ArticlesRepository
 import com.example.nytimestask.ui.details.viewmodel.DetailsViewModel
 import com.example.nytimestask.ui.details.viewmodel.DetailsViewModelFactory
 import com.example.nytimestask.utils.Status
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.fragment_articles.*
 import kotlinx.android.synthetic.main.fragment_details.*
 
 class DetailsFragment : Fragment() {
@@ -49,10 +45,7 @@ class DetailsFragment : Fragment() {
         detailsViewModel = ViewModelProviders.of(
             this,
             DetailsViewModelFactory(
-                ArticlesRepository(
-                    ApiHelperImpl(RetrofitClient.apiService),
-                    DBHelperImp()
-                ),
+                ((requireContext().applicationContext) as ArticlesApplication).articlesRepository,
                 args.articleID
             )
         ).get(DetailsViewModel::class.java)
