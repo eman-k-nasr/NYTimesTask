@@ -12,6 +12,7 @@ import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Test
 
+@ExperimentalCoroutinesApi
 class ArticlesRepositoryTest{
     private lateinit var repo: ArticlesRepository
     private lateinit var fakeLocalDataSource: DBHelper
@@ -33,7 +34,6 @@ class ArticlesRepositoryTest{
 
     }
 
-    @ExperimentalCoroutinesApi
     @Test
     fun getArticles_listOfArticles(){
         runBlockingTest {
@@ -41,4 +41,16 @@ class ArticlesRepositoryTest{
             assertThat(articles.data,IsEqual(articlesFromApi))
         }
     }
+
+    @Test
+    fun getArticleDetails_shouldReturnArticleDetails(){
+        //given : articleId That you will return details of
+        val articleId = 3L
+        runBlockingTest {
+            val article = repo.fetchArticle(articleId)
+            val articleDetailsFromApi = articlesFromApi.find { article -> article.id == articleId   }
+            assertThat(article.data,IsEqual(articleDetailsFromApi))
+        }
+    }
+
 }
