@@ -15,6 +15,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,6 +28,7 @@ android {
     }
 
     packagingOptions {
+        exclude "**/attach_hotspot_windows.dll"
         exclude "META-INF/licenses/**"
         exclude "META-INF/LGPL2.1"
         exclude "META-INF/AL2.0"
@@ -53,6 +55,7 @@ dependencies {
     implementation "com.google.android.material:material:$materialVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
     implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+    implementation "androidx.multidex:multidex:$dexVersion"
 
     //testing
     // local testing
@@ -71,6 +74,11 @@ dependencies {
     androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
     //coroutines
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
+    //navigation component testing
+    //mockito
+    androidTestImplementation "org.mockito:mockito-core:$mockitoVersion"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
 
     //navigation component
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
