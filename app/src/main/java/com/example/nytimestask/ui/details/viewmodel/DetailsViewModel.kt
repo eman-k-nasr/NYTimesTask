@@ -2,7 +2,6 @@ package com.example.nytimestask.ui.details.viewmodel
 
 import androidx.lifecycle.*
 import com.example.nytimestask.data.model.Article
-import com.example.nytimestask.data.repository.ArticlesRepository
 import com.example.nytimestask.data.repository.IArticlesRepository
 import com.example.nytimestask.utils.Resource
 import kotlinx.coroutines.launch
@@ -26,7 +25,7 @@ class DetailsViewModel(private val repo: IArticlesRepository,private val article
     }
 }
 @Suppress("UNCHECKED_CAST")
-class DetailsViewModelFactory(private val repo: ArticlesRepository,private val articleId: Long)
+class DetailsViewModelFactory(private val repo: IArticlesRepository,private val articleId: Long)
     : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(DetailsViewModel::class.java)){
